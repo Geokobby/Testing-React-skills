@@ -1,9 +1,10 @@
 import React from 'react'
 
-function Chats(props) {
+function Chats({message, sender}) {
 
-    const { message } = props;
-    const { sender } = props;
+    // const { message } = props;
+    // const { sender } = props;
+    /*
     if (sender === "bot"){
         return (
             <div>
@@ -13,12 +14,18 @@ function Chats(props) {
             </div>
           )
     }
+          */
     
   return (
     <div>
         <div>
+            {sender === "bot" && 
+             (<img src="../src/assets/image/robot.png" alt="bot" width={60}  /> 
+            )}
             {message}
-            <img src="../src/assets/image/user.png" alt="user" width={60}  /> 
+           { sender === "user" && 
+             (<img src="../src/assets/image/user.png" alt="user" width={60}  /> 
+            )} 
         </div>
      
         
