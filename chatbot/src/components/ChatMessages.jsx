@@ -1,22 +1,11 @@
 import React from 'react'
-import { useState } from 'react';
+// import { useState } from 'react';
 import Chats from './Chats'
 
-function ChatMessages() {
+function ChatMessages({chatMessages}) {
 
   // Using array destructuring to manage the state of the chat messages.
-  const [chatMessages, setChatMessages] = useState([{message:"Hello Bot", 
-            sender:"user",
-             key:"1"}, 
-          { message:"Hello how can I help you?", 
-            sender:"bot",
-            key:"2"},
-          {message:"What is today",
-             sender: "user",
-             key:"3"},         
-          { message: "Today is Tuesday November 4",
-             sender: "bot",
-             key:"4"}]);
+  
   
  // This array was used before array desturcturing was implemented to manage the state of the chat messages.
   // const array = useState([{message:"Hello Bot", 
@@ -24,14 +13,14 @@ function ChatMessages() {
   // const chatMessages = array[0];
   // const setChatMessages = array[1]; 
   
-  function sendMessage() {
-    setChatMessages([
-      ...chatMessages, 
-      {message:"Thanks alot you made my day", 
-      sender:"user", 
-      id: crypto.randomUUID()}
-    ]);
-  }
+  // function sendMessage() {
+  //   setChatMessages([
+  //     ...chatMessages, 
+  //     {message:"Thanks alot you made my day", 
+  //     sender:"user", 
+  //     id: crypto.randomUUID()}
+  //   ]);
+  // }
   // chatMessages
 
   // this is an array of objects that contains the chat messages and their senders we will map through this array to display the chat messages on the screen. And were used to display the chat messages on the screen before useState was implemented to manage the state of the chat messages.
@@ -66,8 +55,8 @@ function ChatMessages() {
   return (
     <>
     
-    {/* this onClick is an event handle to the send button to add message to website. test */}
-    <button onClick={sendMessage}>send</button>
+    {/* this onClick is an event handle to the send button to add message to website. test and runs an event when we click */}
+    {/* <button onClick={sendMessage}>send</button> */}
      {/* <Chats message="Hello Bot" sender="user" />
             <Chats message="Hello how can I help you?" sender="bot" />
             <Chats message="What is today" sender="user" />

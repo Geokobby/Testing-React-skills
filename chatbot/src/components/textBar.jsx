@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-function Textbar() {
+function Textbar({chatMessages, setChatMessages}) {
   // State to hold the input text value
   const [inputText, setInputText] = useState("");
   function saveInputText(event){
@@ -9,7 +9,12 @@ function Textbar() {
   }
 // Function to handle sending the message
   function sendMessage(){
-    console.log(inputText)
+    setChatMessages([
+      ...chatMessages, 
+      {message:"Thanks alot you made my day", 
+      sender:"user", 
+      id: crypto.randomUUID()}
+    ]);
   }
   return (
     <div>
