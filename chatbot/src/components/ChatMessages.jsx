@@ -23,9 +23,14 @@ function ChatMessages() {
             // sender = {chatMesage.sender}
             // key ={chatMesage.key}/>
             // })
-
+            function sendMessage() {
+            console.log("Message sent")
+            }
   return (
     <>
+    
+
+    <button onClick={sendMessage}>send</button>
      {/* <Chats message="Hello Bot" sender="user" />
             <Chats message="Hello how can I help you?" sender="bot" />
             <Chats message="What is today" sender="user" />
