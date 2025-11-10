@@ -23,9 +23,14 @@ function ChatMessages() {
             // sender = {chatMesage.sender}
             // key ={chatMesage.key}/>
             // })
+
+            // This function is used to test the onClick event of the button to send a message which console logs the chatMessages array with the new message added to it in the console.
             function sendMessage() {
-            console.log("Message sent")
-            }
+            chatMessages.push({message:"Thanks alot you made my day", sender:"user", key: crypto.randomUUID()})
+            console.log(chatMessages)
+          }
+
+            
   return (
     <>
     
