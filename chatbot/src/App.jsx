@@ -2,8 +2,10 @@ import React from 'react'
 import { useState } from 'react';
 import Textbar from './components/textBar'
 import ChatMessages from './components/ChatMessages'
+import './App.css'
 
 function App() {
+  //lifting the state of chatMessages and setChatMessages to the App component so that it can be passed down to both Textbar and ChatMessages components as props.
     const [chatMessages, setChatMessages] = useState([{message:"Hello Bot", 
             sender:"user",
              key:"1"}, 
@@ -17,10 +19,12 @@ function App() {
              sender: "bot",key:"4"}]);
    
   return (
-    <div>
+    <div className="app-container">
+       {/* Passing chatMessages and setChatMessages as props to Textbar and chatMessages to ChatMessages component. */}
+      
+      <ChatMessages chatMessages={chatMessages} />
       <Textbar chatMessages={chatMessages}
       setChatMessages= {setChatMessages}/>
-      <ChatMessages chatMessages={chatMessages} />
     </div>
   )
 }

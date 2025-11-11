@@ -1,4 +1,5 @@
 import React from 'react'
+import './chats.css'
 
 function Chats({message, sender}) {
 
@@ -17,12 +18,17 @@ function Chats({message, sender}) {
           */
     
   return (
-    <div>
-        <div>
+    <div className='chat-message-container'>
+        <div className={sender === "user" ? 
+          "chat-message-user" : 
+          "chat-message-bot"}>
             {sender === "bot" && 
              (<img src="../src/assets/image/robot.png" alt="bot" width={60}  /> 
             )}
-            {message}
+         <div className="chat-message"> 
+            {message }
+          </div>
+           
            { sender === "user" && 
              (<img src="../src/assets/image/user.png" alt="user" width={60}  /> 
             )} 

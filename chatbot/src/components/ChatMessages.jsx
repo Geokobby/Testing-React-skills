@@ -1,8 +1,11 @@
 import React from 'react'
 // import { useState } from 'react';
 import Chats from './Chats'
+import './chatMessages.css'
 
-function ChatMessages({chatMessages}) {
+function ChatMessages({chatMessages})
+//passing chatMessages as props from App component
+{
 
   // Using array destructuring to manage the state of the chat messages.
   
@@ -53,10 +56,12 @@ function ChatMessages({chatMessages}) {
 
             
   return (
-    <>
+    <div>
     
     {/* this onClick is an event handle to the send button to add message to website. test and runs an event when we click */}
+
     {/* <button onClick={sendMessage}>send</button> */}
+    
      {/* <Chats message="Hello Bot" sender="user" />
             <Chats message="Hello how can I help you?" sender="bot" />
             <Chats message="What is today" sender="user" />
@@ -66,14 +71,17 @@ function ChatMessages({chatMessages}) {
             {/* {chatMessageComponent}  */}
 
               {/* This is the map function directly in the JSX */}
-              {chatMessages.map((chatMesage)=>{
-            return <Chats 
-            message={chatMesage.message} 
-            sender = {chatMesage.sender}
-            key ={chatMesage.key}/>
-            })} 
+              <div className='chat-messages-container'>
+                {chatMessages.map((chatMesage)=>{
+                return <Chats 
+                message={chatMesage.message} 
+                sender = {chatMesage.sender}
+                key ={chatMesage.key}/>
+                })} 
+            </div>
+              
 
-    </>
+    </div>
   )
 }
 

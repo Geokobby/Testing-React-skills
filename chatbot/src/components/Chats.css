@@ -1,0 +1,25 @@
+.chat-message-user{
+display: flex;
+justify-content: end;
+align-items: center;
+/* border: solid 1px rebeccapurple; */
+
+}
+
+.chat-message-bot{
+    display: flex;
+    align-items: center;
+}
+
+.chat-message{
+    background-color: #e8e8e4 ;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.chat-messages-container{
+    display: flex;
+    /* border: solid 1px red; */
+    
+    }
