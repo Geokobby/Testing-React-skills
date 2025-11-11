@@ -1,6 +1,12 @@
 .app-container{
+  
     max-width:600px;
     margin-inline: auto;
     font-family: arial;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
     
 }
+

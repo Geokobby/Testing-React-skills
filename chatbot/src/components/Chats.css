@@ -16,10 +16,15 @@ align-items: center;
     padding: 10px 20px;
     border-radius: 10px;
     font-weight: 500;
+    margin-bottom: 20px;
+    max-width: 300px;
 }
 
-.chat-messages-container{
-    display: flex;
-    /* border: solid 1px red; */
-    
-    }
+
+
+.chat-profile-user{
+    margin-left: 5px;
+}
+.chat-profile-bot{
+    margin-right: 5px;
+}

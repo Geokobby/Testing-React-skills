@@ -23,8 +23,10 @@ function App() {
        {/* Passing chatMessages and setChatMessages as props to Textbar and chatMessages to ChatMessages component. */}
       
       <ChatMessages chatMessages={chatMessages} />
-      <Textbar chatMessages={chatMessages}
-      setChatMessages= {setChatMessages}/>
+      
+        <Textbar chatMessages={chatMessages}
+        setChatMessages= {setChatMessages} />
+      
     </div>
   )
 }

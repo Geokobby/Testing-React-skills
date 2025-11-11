@@ -1,7 +1,7 @@
 import React from 'react'
 // import { useState } from 'react';
 import Chats from './Chats'
-import './chatMessages.css'
+import './ChatMessages.css'
 
 function ChatMessages({chatMessages})
 //passing chatMessages as props from App component
