@@ -1,4 +1,6 @@
 import React from 'react'
+import { useEffect } from 'react'
+import { useRef } from 'react'
 // import { useState } from 'react';
 import Chats from './Chats'
 import './ChatMessages.css'
@@ -6,6 +8,17 @@ import './ChatMessages.css'
 function ChatMessages({chatMessages})
 //passing chatMessages as props from App component
 {
+  // Creating a reference to the chat messages container div to enable scrolling functionality. this is reference to target the chat messages container div.
+  const chatMessagesRef = useRef(null);
+
+
+// useEffect hook to scroll to the bottom of the chat messages container whenever a new message is added to the chatMessages array.
+  useEffect(()=>{
+    const containerElem = chatMessagesRef.current; 
+    if(containerElem){chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;}
+    
+    
+  }, [chatMessages])
 
   // Using array destructuring to manage the state of the chat messages.
   
@@ -71,7 +84,9 @@ function ChatMessages({chatMessages})
             {/* {chatMessageComponent}  */}
 
               {/* This is the map function directly in the JSX */}
-              <div className='chat-messages-container'>
+
+              <div className='chat-messages-container'
+              ref={chatMessagesRef}>
                 {chatMessages.map((chatMesage)=>{
                 return <Chats 
                 message={chatMesage.message} 
